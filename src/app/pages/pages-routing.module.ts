@@ -64,6 +64,11 @@ const routes: Routes = [{
         .then(m => m.TablesModule),
     },
     {
+      path: 'user',
+      loadChildren: () => import('./kounouztravel/users.module')
+        .then(m => m.UsersModule),
+    },
+    {
       path: 'miscellaneous',
       loadChildren: () => import('./miscellaneous/miscellaneous.module')
         .then(m => m.MiscellaneousModule),
