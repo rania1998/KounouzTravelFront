@@ -11,19 +11,21 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   public getAllClients() {
-    return this.http.get<Users[]>(this.ClientUrl + 'UsersManager');
+    return this.http.get<Users[]>(this.ClientUrl + 'UsersManager',{headers : {
+      'Content-Type': 'application/json',
+  }});
   }
 
   public deleteClient(Client) {
     // console.log(Client);
-    return this.http.post<Users>(this.ClientUrl + 'deleteClient', Client);
+    return this.http.post<Users>(this.ClientUrl + 'deleteUsers', Client,{headers : {
+      'Content-Type': 'application/json',
+  }}).subscribe();
   }
 
   public addClient(Client: Users) {
-    // console.log(Client);
-    return this.http.post<Users>(this.ClientUrl + 'saveUsers', Client,{headers : {
-      'Content-Type': 'application/json',
-  }});
+     console.log('anwar');
+    return this.http.post<Users>(this.ClientUrl + 'saveUsers', Client).subscribe();
   }
 
 
@@ -38,11 +40,15 @@ export class UserService {
   //           }));
   //       }
   public getClientById(id) {
-    return this.http.get<Users>(this.ClientUrl + 'clientById/' + id);
+    return this.http.get<Users>(this.ClientUrl + 'clientById/' + id,{headers : {
+      'Content-Type': 'application/json',
+  }});
   }
 
   updateClient(client: Users) {
-    return this.http.post<Users>(this.ClientUrl + 'clientById/', client);
+    return this.http.post<Users>(this.ClientUrl + 'saveUsers', client,{headers : {
+      'Content-Type': 'application/json',
+  }}).subscribe();
   }
 
 

@@ -27,16 +27,13 @@ export class SmartUserComponent {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmSave : true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number',
-      },
       login: {
         title: 'login',
         type: 'string',
@@ -75,7 +72,13 @@ export class SmartUserComponent {
    saveUser($event):void{
     console.log($event);
     this.clientService.addClient($event.newData as Users);
-     console.log($event.newData);
+    this.getClient();
+    $event.confirm.resolve();
+   }
+   updateUser($event):void{
+    console.log($event);
+    this.clientService.updateClient($event.newData as Users);
+    $event.confirm.resolve();
    }
    getClient(): void {
     this.clientService.getAllClients().subscribe(Users =>{
@@ -87,7 +90,8 @@ export class SmartUserComponent {
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
-      // console.log('hello');
+       //console.log(event);
+      this.clientService.deleteClient(event.data as Users);
       event.confirm.resolve();
     } else {
       // console.log('hello');
