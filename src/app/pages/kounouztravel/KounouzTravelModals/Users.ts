@@ -4,5 +4,5 @@ export class Users {
   login: String ;
   password: String ;
   email: String ;
-  role: String ;
+  role: Role = 0;
 }

@@ -46,14 +46,21 @@ export class SmartUserComponent {
         title: 'email',
         type: 'string',
       },
-      role: {
-        title: 'role',
+      Role: {
+        title: 'Role',
         type: 'string',
+      //   type: 'html',
+      //   editor: {
+      //     type: 'list',
+      //     config: {
+      //       list: [{ value: 'User', title: 'User' },
+			// { value: 'Client', title: 'Client' },
+			// { value: 'Agent', title: 'Agent' },
+			// { value: 'Supervisor', title: 'Supervisor' }],
+      //     },
+      //   },
       },
-      // age: {
-      //   title: 'Age',
-      //   type: 'number',
-      // },
+
     },
 
   };

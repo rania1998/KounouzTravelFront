@@ -1,4 +1,4 @@
-export  enum ClientType {
+enum ClientType {
 	customer , consumer
 
 }
