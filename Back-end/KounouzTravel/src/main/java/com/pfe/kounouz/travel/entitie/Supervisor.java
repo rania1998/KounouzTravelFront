@@ -20,7 +20,7 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "id")
 public class Supervisor extends Users {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
 	
