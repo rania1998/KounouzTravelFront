@@ -1,3 +1,3 @@
-enum SupervitionType {
-  offer , client , agent , supervisor , processInstance , reservation , commentaire , category , underCategory
+enum SupervisionType {
+  offer , client , agent , supervisor , processInstance , reservation , commentaire , category , underCategory,
 }

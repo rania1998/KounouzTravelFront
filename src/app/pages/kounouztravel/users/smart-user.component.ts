@@ -46,19 +46,9 @@ export class SmartUserComponent {
         title: 'email',
         type: 'string',
       },
-      Role: {
+      role: {
         title: 'Role',
         type: 'string',
-      //   type: 'html',
-      //   editor: {
-      //     type: 'list',
-      //     config: {
-      //       list: [{ value: 'User', title: 'User' },
-			// { value: 'Client', title: 'Client' },
-			// { value: 'Agent', title: 'Agent' },
-			// { value: 'Supervisor', title: 'Supervisor' }],
-      //     },
-      //   },
       },
 
     },
@@ -67,7 +57,7 @@ export class SmartUserComponent {
   contractt: Users = new Users();
   source:Users[];
   constructor( private clientService: UserService ) {
-    const data = this.clientService.getAllClients();
+    const data = this.clientService.getAll();
     // this.smartTable.create.subscribe( (dataObject: any) => {
     //   console.log('Create');
     //   console.log(dataObject);
@@ -78,17 +68,17 @@ export class SmartUserComponent {
 
    saveUser($event):void{
     console.log($event);
-    this.clientService.addClient($event.newData as Users);
+    this.clientService.add($event.newData as Users);
     this.getClient();
     $event.confirm.resolve();
    }
    updateUser($event):void{
     console.log($event);
-    this.clientService.updateClient($event.newData as Users);
+    this.clientService.update($event.newData as Users);
     $event.confirm.resolve();
    }
    getClient(): void {
-    this.clientService.getAllClients().subscribe(Users =>{
+    this.clientService.getAll().subscribe(Users =>{
       this.source = Users;
       console.clear;
       // console.log(Users);
@@ -98,7 +88,7 @@ export class SmartUserComponent {
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
        //console.log(event);
-      this.clientService.deleteClient(event.data as Users);
+      this.clientService.delete(event.data as Users);
       event.confirm.resolve();
     } else {
       // console.log('hello');

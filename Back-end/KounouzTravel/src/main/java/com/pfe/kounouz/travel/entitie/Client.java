@@ -37,7 +37,7 @@ public class Client extends Users  {
 	private String Adresse;
 	
 	@Enumerated
-	private ClientType ClientType;
+	private ClientType clientType;
 	
 
 }

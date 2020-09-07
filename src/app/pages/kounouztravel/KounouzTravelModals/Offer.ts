@@ -10,5 +10,5 @@ export  class Offers {
   types: String;
   quantity: Number ;
   ranges: Number ;
-  underCategoryId: UnderCategory;
+ // underCategoryId: UnderCategory;
 }
