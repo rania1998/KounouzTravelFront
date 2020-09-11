@@ -1,0 +1,36 @@
+<app-view-group></app-view-group>
+
+
+  <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Group Liste</h4>
+                   
+                    <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Test</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr *ngFor="let group of groups">
+                                     <td>{{group.nom}}</td>
+                                     <td>{{group.test}}</td>
+                                     <td>
+                                        <a>
+                                        <i class="mdi mdi-delete-forever"   (click)="deleteGroup(group)" ></i>
+                                        <i class="mdi mdi-update"   (click)="updateGroup(group.nom)" ></i>
+                                        </a>
+                                     </td>
+                                     </tr>
+                            </tbody>
+                        </table>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+    

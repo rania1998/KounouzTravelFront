@@ -1,0 +1,41 @@
+.hoverShadow {
+	-webkit-transition: box-shadow .2s ease-out;
+	-moz-transition: box-shadow .2s ease-out;
+	-o-transition: box-shadow .2s ease-out;
+	transition: box-shadow .2s ease-out;
+}
+
+.hoverShadow:hover {
+	z-index: 2;
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px
+		rgba(0, 0, 0, 0.24);
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px
+		rgba(0, 0, 0, 0.24);
+}
+
+.mdi-link:hover{
+	color: #28a745;
+}
+
+.mdi:hover{
+	color: #5c4ac7;
+}
+
+.white{
+	color: white !important;
+}
+
+.active-state{
+	background : #6610f2;
+}
+h1 {
+	color:  green;
+  }
+
+  .ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

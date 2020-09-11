@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col-sm-12">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="card-title">Liste Category</h4>
+              <div class="form-group mb-4">
+                  <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Filter Category">
+                </div>
+              <table class="table table-hover"  *ngIf="(pageCategory.content | filter: searchText).length > 0; else noResults">
+                <thead>
+                  <tr>
+                      <th scope="row" *ngIf="searchText !='' "></th>
+                    <th>description</th>
+                    <th>nom</th>
+                    <th>travel</th>
+                    <th>accommondation</th>
+                  </tr>
+                </thead>
+                <tbody  *ngIf="pageCategory?.content">
+                  <tr *ngFor="let category of pageCategory.content | filter: searchText; let i = index">
+                      <th scope="row" *ngIf="searchText !='' ">{{i + 1}}</th>
+                    <td>{{category.description}}</td>
+                    <td>{{category.name}}</td>
+                    <td>{{category.travel}}</td>
+                    <td>{{category.accommondation}}</td>
+
+                    <td>
+                      <a>
+                      <i class="mdi mdi-delete-forever"  (click)="deleteCategory(category)"   ></i>
+
+                      <a ><i class="mdi mdi-update"   (click)="updateCategory(Category)" ></i></a>
+                      </a>
+                   </td>
+                  </tr>
+                </tbody>
+              </table>
+              <ng-template #noResults>
+                  <p>No results found for "{{searchText}}".</p>
+                </ng-template>
+                  <nav aria-label="...">
+                    <ul class="pagination"  *ngIf="pageCategory?.content" >
+                      <li *ngFor="let page of ' '.repeat(pageCategory.totalPages).split(''), let i = index " (click)="onSelect(i)" [class.active]="i === selectedPage" class="page-item"><a class="page-link">{{i}}</a></li>
+                    </ul>
+                    </nav>
+          </div>
+      </div>
+  </div>
+</div>
+

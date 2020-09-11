@@ -1,0 +1,27 @@
+<div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Add New Group</h4>
+                   <form class="form"    (ngSubmit)="addNewGroup()" #groupForm="ngForm" >  
+                        <div class="form-group row">
+                               <label for="example-time-input" class="col-2 col-form-label">Nom</label>
+                         <div class="col-10">
+                                <input class="form-control" type="text"  id="example-time-input" required>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                                <label for="example-time-input" class="col-2 col-form-label">Test</label>
+                                <div class="col-10">
+                               <input class="form-control" type="text"  id="example-time-input" required>
+                       </div>
+                      </div>
+                      <button class="btn btn-primary" type="submit"  [disabled]="!groupForm.form.valid">add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
