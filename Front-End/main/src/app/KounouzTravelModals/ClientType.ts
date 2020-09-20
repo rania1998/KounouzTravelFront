@@ -1,3 +1,0 @@
-enum ClientType {
-customer , consumer
-}

@@ -1,14 +1,12 @@
-import { UnderCategory } from './UnderCategory';
-export  class Offers {
+export  class Offer {
 
   id: Number ;
-  name_offer: String ;
+  name_offers: String ;
   begin_date: Date ;
   end_date: Date ;
   description: String ;
   prices: Number;
   types: String;
   quantity: Number ;
-  ranges: Number ;
- // underCategoryId: UnderCategory;
+
 }
